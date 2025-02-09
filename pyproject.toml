@@ -1,0 +1,28 @@
+[project]
+name = "asks-oldport"
+version = "2.4.13"
+description = "old asks port"
+authors = [
+    {name = "Bryon Roche",email = "kain@kain.org"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anyio (<3)",
+    "h11 (>=0.14.0,<0.15.0)",
+    "async-generator (>=1.10,<2.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+curio-compat = "^1.6.7"
+overly = "^0.1.85"
+anyio = {version = ">=2.0,<3.0", extras = ["curio", "trio"]}
+trio = "<0.24"
+
